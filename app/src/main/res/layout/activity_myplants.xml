@@ -87,5 +87,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line" />
 
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="34dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/grey_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
