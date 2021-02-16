@@ -1,8 +1,10 @@
-package fi.xinw.plantscare_group11;
+package fi.group11.plantscare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import fi.group11.plantscare.R;
 
 public class MainActivity extends AppCompatActivity {
 

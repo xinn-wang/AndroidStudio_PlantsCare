@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">PlantsCare_Group11</string>
-    <string name="d_o_n_t_p_a">D O N \'T \nP A N I C\nI T 'S \nO R G A -\nN I C</string>
     <string name="btn_mp">My Plants</string>
     <string name="btn_r">Remenders</string>
     <string name="btn_h">History</string>

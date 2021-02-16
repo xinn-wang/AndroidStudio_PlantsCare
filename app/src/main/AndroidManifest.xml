@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fi.xinw.plantscare_group11">
+    package="fi.group11.plantscare">
 
     <application
         android:allowBackup="true"
