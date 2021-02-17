@@ -53,6 +53,7 @@
             android:layout_height="40dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/border_05dp"
+            android:onClick="myplantBtn"
             android:text="@string/btn_mp" />
 
         <Button
@@ -62,6 +63,7 @@
             android:layout_height="40dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/border_05dp"
+            android:onClick="reminderBtn"
             android:text="@string/btn_r" />
 
         <Button
@@ -70,6 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/border_05dp"
+            android:onClick="historyBtn"
             android:text="@string/btn_h" />
     </LinearLayout>
 

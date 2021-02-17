@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantsCare_Group11">
+        <activity android:name="fi.group11.plantscare.HistoryActivity"></activity>
+        <activity android:name="fi.group11.plantscare.ReminderActivity" />
+        <activity android:name="fi.group11.plantscare.MyPlantActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
