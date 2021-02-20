@@ -7,7 +7,23 @@
     android:layout_height="match_parent"
     android:background="@color/grey_background">
 
+    <androidx.constraintlayout.utils.widget.MockView
+        android:id="@+id/mv3"
+        android:layout_width="142dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mv1" />
 
+    <androidx.constraintlayout.utils.widget.MockView
+        android:id="@+id/mv1"
+        android:layout_width="142dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
 
     <Button
         android:id="@+id/reminderBtn"
@@ -30,7 +46,6 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <View
         android:id="@+id/line"
         android:layout_width="343dp"
@@ -45,8 +60,8 @@
 
     <ImageButton
         android:id="@+id/addPlantBtn"
-        android:layout_width="58dp"
-        android:layout_height="53dp"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="36dp"
         android:background="@color/grey_background"
@@ -54,7 +69,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/plus" />
 
+    <androidx.constraintlayout.utils.widget.MockView
+        android:id="@+id/mockView"
+        android:layout_width="142dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mv2" />
 
+    <androidx.constraintlayout.utils.widget.MockView
+        android:id="@+id/mv2"
+        android:layout_width="142dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
 
     <ImageButton
         android:id="@+id/backBtn"
@@ -66,20 +97,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow" />
-
-    <GridView
-
-        android:id="@+id/plantsListView"
-        android:layout_width="345dp"
-        android:layout_height="391dp"
-        android:layout_marginTop="14dp"
-        android:numColumns="2"
-        app:layout_constraintBottom_toTopOf="@+id/reminderBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line"
-        app:layout_constraintVertical_bias="0.0" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
