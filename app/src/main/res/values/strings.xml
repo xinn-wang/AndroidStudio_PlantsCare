@@ -10,5 +10,12 @@
     <string name="h">HIstory</string>
     <string name="p">plants name</string>
     <string name="anp">Add new plants</string>
+    <string name="addPic">Add a pic</string>
+    <string name="daily">Daily</string>
+    <string name="monthly">Monthly</string>
+    <string name="weekly">Weekly</string>
+    <string name="type">Type</string>
+    <string name="needsWater">Needs water:</string>
+    <string name="sunPref">Sun preference:</string>
 
 </resources>
