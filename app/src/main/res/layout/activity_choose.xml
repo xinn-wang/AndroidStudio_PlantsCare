@@ -8,6 +8,18 @@
     android:background="@color/grey_background">
 
 
+    <Button
+        android:id="@+id/viewAll"
+        style="@android:style/Widget.Button"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="172dp"
+        android:background="@drawable/border_05dp"
+        android:text=" open Database"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/mp"
         android:layout_width="333dp"
@@ -64,10 +76,10 @@
         style="@android:style/Widget.Button"
         android:layout_width="143dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/border_05dp"
         android:text="Add from database"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewAll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

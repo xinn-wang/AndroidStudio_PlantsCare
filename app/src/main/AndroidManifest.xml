@@ -13,8 +13,9 @@
         <activity android:name=".HistoryActivity" />
         <activity android:name=".ReminderActivity" />
         <activity android:name=".MyPlantActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ChooseActivity">
+        <activity android:name=".ChooseActivity" />
+        <activity android:name=".MainActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
