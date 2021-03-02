@@ -11,14 +11,14 @@ import android.widget.ImageButton;
 
 public class MyPlantActivity extends AppCompatActivity {
     private Button reminderBtn;
-    private ImageButton addPlantBtn, backBtn;
+    private ImageButton chooseWayBtn, backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myplants);
 
         reminderBtn = findViewById(R.id.reminderBtn);
-        addPlantBtn = findViewById(R.id.addPlantBtn);
+        chooseWayBtn = findViewById(R.id.chooseWayBtn);
         backBtn = findViewById(R.id.backBtn);
         //Launch reminder activity onClick
         reminderBtn.setOnClickListener(new View.OnClickListener() {
@@ -29,11 +29,11 @@ public class MyPlantActivity extends AppCompatActivity {
             }
         });
         //Launch add plant activity onClick
-        addPlantBtn.setOnClickListener(new View.OnClickListener() {
+        chooseWayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent addPlant = new Intent(MyPlantActivity.this, AddPlantActivity.class);
-                startActivity(addPlant);
+                Intent chooseWay = new Intent(MyPlantActivity.this, ChooseActivity.class);
+                startActivity(chooseWay);
             }
         });
         //Back to homepage onClick

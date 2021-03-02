@@ -8,28 +8,18 @@
     android:background="@color/grey_background">
 
 
-
-    <Button
-        android:id="@+id/reminderBtn"
-        style="@android:style/Widget.Button"
-        android:layout_width="143dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="48dp"
-        android:background="@drawable/border_05dp"
-        android:text="@string/btn_r"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
     <TextView
         android:id="@+id/mp"
-        android:layout_width="107dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="34dp"
+        android:layout_width="333dp"
+        android:layout_height="34dp"
         android:layout_marginTop="104dp"
-        android:text="@string/btn_mp"
+        android:text="Choose one way to continue"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/add_manul"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/line"
@@ -43,16 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/chooseWayBtn"
-        android:layout_width="58dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="36dp"
-        android:background="@color/grey_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/plus" />
 
 
 
@@ -67,19 +47,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow" />
 
-    <GridView
-
-        android:id="@+id/plantsListView"
-        android:layout_width="345dp"
-        android:layout_height="391dp"
-        android:layout_marginTop="14dp"
-        android:numColumns="2"
-        app:layout_constraintBottom_toTopOf="@+id/reminderBtn"
+    <Button
+        android:id="@+id/add_manul"
+        style="@android:style/Widget.Button"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/border_05dp"
+        android:text="Add manully"
+        app:layout_constraintBottom_toTopOf="@+id/add_fromDatabase"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/add_fromDatabase"
+        style="@android:style/Widget.Button"
+        android:layout_width="143dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="252dp"
+        android:background="@drawable/border_05dp"
+        android:text="Add from database"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,7 @@
     <string name="type">Type</string>
     <string name="needsWater">Needs water:</string>
     <string name="sunPref">Sun preference:</string>
+    <string name="info">Info: </string>
 
 
 </resources>
