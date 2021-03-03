@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 public class MyPlantActivity extends AppCompatActivity {
     private Button reminderBtn;
     private ImageButton addPlantBtn, backBtn;
+    //Get or create singleton instance for the list of myplant
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

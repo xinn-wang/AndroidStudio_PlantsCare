@@ -35,5 +35,15 @@ public class ReminderActivity extends AppCompatActivity {
                 startActivity(back);
             }
         });
+        //Textview for limited date (7 days from current date)
+        //Print out all watering date applicable within this 7 days using loop
+        //Set condition based on each plant watering cycle and list.size()
+        //Set if condition for the limited days
+        /*for(i=0; i<list.size(); i++) {
+           int step = MyplantList.getInstance().getList().get(i).getWateringCycle;
+           String name = MyplantList.getInstance().getList().get(i).getName;
+           //print out reminders
+        }*/
+
     }
 }
