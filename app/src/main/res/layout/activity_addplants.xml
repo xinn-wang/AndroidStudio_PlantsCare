@@ -40,5 +40,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow" />
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/plantList"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
