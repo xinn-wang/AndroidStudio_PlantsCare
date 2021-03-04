@@ -42,10 +42,14 @@ public class AddPlantActivity extends AppCompatActivity {
         plantList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyPlantList.getInstance().getMyPlants().add(PlantList.getInstance().getPlants().get(position));
+                MyPlantList.getInstance().getMyPlants().add(PlantList.getInstance().getPlants()
+                        .get(position));
+
                 Toast.makeText(AddPlantActivity.this,
-                        MyPlantList.getInstance().getMyPlants().get(position).toString() +
+                        MyPlantList.getInstance().getMyPlants().get(position).getWateringCycle() +
                                 " selected", Toast.LENGTH_SHORT).show();
+
+                //MyPlantList.getInstance().getMyPlants().get(position).setFirstDay;
             }
         });
 

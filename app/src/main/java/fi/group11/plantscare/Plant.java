@@ -6,6 +6,7 @@ public class Plant {
     private int wateringCycle;
     private String sunPref;
     private String temperature;
+    private int firstDay;
 
     public Plant(String name, String type, int wateringCycle, String sunPref, String temperature) {
         this.name = name;
@@ -33,5 +34,13 @@ public class Plant {
 
     public String getTemperature() {
         return temperature;
+    }
+
+    public int getFirstDay() {
+        return this.firstDay;
+    }
+
+    public void setFirstDay(int firstDay) {
+        this.firstDay = firstDay;
     }
 }
