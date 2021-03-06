@@ -5,25 +5,40 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.time.LocalDate;
+
+/**
+ * Created by Kinh Truong
+ * @author  Kinh Truong
+ * @version 1: Added button navigation function
+ * @version 2: Added listview for database, listview can be clicked to add plant to user's list
+ * @version 3: Moved database listview to another activity, created 2 new buttons for new navigation
+ */
 public class AddPlantActivity extends AppCompatActivity {
-    private ListView plantList;
     private ImageButton backBtn;
+    private Button addFromDatabase, addManually;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addplants);
-
-        plantList = findViewById(R.id.plantList);
+        //initiate
         backBtn = findViewById(R.id.backBtn);
+        addFromDatabase = findViewById(R.id.addFromDatabase);
+        addManually = findViewById(R.id.addManually);
+
         //lauch/back to my plant activity
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,26 +47,23 @@ public class AddPlantActivity extends AppCompatActivity {
                 startActivity(myplant);
             }
         });
-        //Set array adapter for plantList ListView
-        plantList.setAdapter(new ArrayAdapter<Plant> (
-            this,
-                android.R.layout.simple_list_item_1,
-                PlantList.getInstance().getPlants()
-        ));
 
-        plantList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        addFromDatabase.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyPlantList.getInstance().getMyPlants().add(PlantList.getInstance().getPlants()
-                        .get(position));
-
-                Toast.makeText(AddPlantActivity.this,
-                        MyPlantList.getInstance().getMyPlants().get(position).getWateringCycle() +
-                                " selected", Toast.LENGTH_SHORT).show();
-
-                //MyPlantList.getInstance().getMyPlants().get(position).setFirstDay;
+            public void onClick(View v) {
+                Intent addPlantFromDatabase = new Intent(AddPlantActivity.this, AddPlantFromDatabase.class);
+                startActivity(addPlantFromDatabase);
             }
         });
+
+        addManually.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addPlantFromUser = new Intent(AddPlantActivity.this, AddPlantFromUser.class);
+                startActivity(addPlantFromUser);
+            }
+        });
+
 
 
 

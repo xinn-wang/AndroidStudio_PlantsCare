@@ -1,12 +1,16 @@
 package fi.group11.plantscare;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Plant {
     private String name;
     private String type;
     private int wateringCycle;
     private String sunPref;
     private String temperature;
-    private int firstDay;
+    private LocalDate firstDay;
+
 
     public Plant(String name, String type, int wateringCycle, String sunPref, String temperature) {
         this.name = name;
@@ -36,11 +40,12 @@ public class Plant {
         return temperature;
     }
 
-    public int getFirstDay() {
+    public LocalDate getFirstDay() {
         return this.firstDay;
     }
 
-    public void setFirstDay(int firstDay) {
+    public void setFirstDay(LocalDate firstDay) {
         this.firstDay = firstDay;
     }
+
 }

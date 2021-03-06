@@ -1,16 +1,24 @@
 <resources>
     <string name="app_name">PlantsCare_Group11</string>
-    <!--    This string causes error-->
-    <!--    <string name="d_o_n_t_p_a">D O N \'T \nP A N I C\nI T 'S \nO R G A -\nN I C</string>-->
     <string name="btn_mp">My Plants</string>
-    <string name="btn_r">Remenders</string>
+    <string name="btn_r">Reminders</string>
     <string name="btn_h">History</string>
-    <string name="btn_r1">Remenders</string>
+    <string name="btn_r1">Reminders</string>
     <string name="btn_h1">History</string>
     <string name="mp">My_plants</string>
-    <string name="r">Remenders</string>
-    <string name="h">HIstory</string>
+    <string name="r">Reminders</string>
+    <string name="h">History</string>
     <string name="p">plants name</string>
     <string name="anp">Add new plants</string>
+    <string name="addPic">Add a pic</string>
+    <string name="daily">Daily</string>
+    <string name="monthly">Monthly</string>
+    <string name="weekly">Weekly</string>
+    <string name="type">Type</string>
+    <string name="needsWater">Needs water:</string>
+    <string name="sunPref">Sun preference:</string>
+    <string name="btn_Database">Add from database</string>
+    <string name="btn_addManually">Add manually</string>
+
 
 </resources>

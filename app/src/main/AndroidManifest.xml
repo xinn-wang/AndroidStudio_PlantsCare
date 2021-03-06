@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantsCare_Group11">
-        <activity android:name=".AddPlantActivity"></activity>
+        <activity android:name=".AddPlantFromUser"></activity>
+        <activity android:name=".AddPlantFromDatabase" />
+        <activity android:name=".AddPlantActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".ReminderActivity" />
         <activity android:name=".MyPlantActivity" />

@@ -12,8 +12,8 @@ public class PlantList {
 
     private PlantList() {
         this.plants = new ArrayList<>();
-        plants.add(new Plant("rose", "flower", 3, "NA", "NA"));
-        plants.add(new Plant("sunflower", "flower", 1, "NA", "NA"));
+        plants.add(new Plant("rose", "flower", 3, "6-8 hours/day", "27°C"));
+        plants.add(new Plant("sunflower", "flower", 1, "3 hours/day", "40°C"));
     }
 
     public ArrayList<Plant> getPlants() {
