@@ -60,7 +60,7 @@ public class ReminderActivity extends AppCompatActivity {
         int i = 0;
         reminderView.setText(MyPlantList.getInstance().getMyPlants().get(position).toString());
         sunPref.setText(MyPlantList.getInstance().getMyPlants().get(position).getSunPref());
-        temperature.setText(MyPlantList.getInstance().getMyPlants().get(position).getTemperature());
+        temperature.setText(Integer.toString(MyPlantList.getInstance().getMyPlants().get(position).getTemperature()));
         type.setText(MyPlantList.getInstance().getMyPlants().get(position).getType());
         while (true) {
             LocalDate creationDay = MyPlantList.getInstance().getMyPlants().get(position).getFirstDay();

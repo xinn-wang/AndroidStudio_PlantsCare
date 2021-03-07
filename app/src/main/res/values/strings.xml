@@ -9,14 +9,16 @@
     <string name="r">Reminders</string>
     <string name="h">History</string>
     <string name="p">plants name</string>
-    <string name="anp">Add new plants</string>
+    <string name="anp">Add new plant</string>
     <string name="addPic">Add a pic</string>
     <string name="daily">Daily</string>
     <string name="monthly">Monthly</string>
     <string name="weekly">Weekly</string>
+    <string name="name">Name</string>
     <string name="type">Type</string>
-    <string name="needsWater">Needs water:</string>
-    <string name="sunPref">Sun preference:</string>
+    <string name="needsWater">Needs water(days/time)</string>
+    <string name="sunPref">Sun preference</string>
+    <string name="temperature">Ideal temperature</string>
     <string name="btn_Database">Add from database</string>
     <string name="btn_addManually">Add manually</string>
 
