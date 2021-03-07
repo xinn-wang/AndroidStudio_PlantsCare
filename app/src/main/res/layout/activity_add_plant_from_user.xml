@@ -8,73 +8,68 @@
     tools:context=".AddPlantFromUser">
 
     <Button
-        android:id="@+id/testManual"
+        android:id="@+id/addManual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/temperatureEtxt" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/nameEtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:hint="Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/typeEtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Type"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintEnd_toEndOf="@+id/nameEtxt"
+        app:layout_constraintStart_toStartOf="@+id/nameEtxt"
+        app:layout_constraintTop_toBottomOf="@+id/nameEtxt" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/waterCycleEtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Water cycle (days/time)"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintEnd_toEndOf="@+id/typeEtxt"
+        app:layout_constraintStart_toStartOf="@+id/typeEtxt"
+        app:layout_constraintTop_toBottomOf="@+id/typeEtxt" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/sunPrefEtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Sun preference"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintEnd_toEndOf="@+id/waterCycleEtxt"
+        app:layout_constraintStart_toStartOf="@+id/waterCycleEtxt"
+        app:layout_constraintTop_toBottomOf="@+id/waterCycleEtxt" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/temperatureEtxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Temperature"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintEnd_toEndOf="@+id/sunPrefEtxt"
+        app:layout_constraintStart_toStartOf="@+id/sunPrefEtxt"
+        app:layout_constraintTop_toBottomOf="@+id/sunPrefEtxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

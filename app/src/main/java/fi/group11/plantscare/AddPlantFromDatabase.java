@@ -7,9 +7,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 
+/**
+ * Created by Kinh Truong
+ * @author Kinh Truong
+ * This activity is for displaying the plant database of the app
+ * @version 1: Added listview to display database
+ * @version 2: Added Toast message on added plant
+ */
 public class AddPlantFromDatabase extends AppCompatActivity {
     private ListView plantList;
     @Override
@@ -35,7 +43,7 @@ public class AddPlantFromDatabase extends AppCompatActivity {
                         .get(position));
                 LocalDate creationDay = LocalDate.now();
                 MyPlantList.getInstance().getMyPlants().get(MyPlantList.getInstance().getMyPlants().size() - 1).setFirstDay(creationDay);
-
+                Toast.makeText(AddPlantFromDatabase.this, "Added to My Plants" , Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-
+/**
+ * Created by Kinh Truong
+ * @author  Kinh Truong
+ * This activity is for displaying output of already watered date for specific plant
+ */
 public class HistoryActivity extends AppCompatActivity {
     private ImageButton backBtn;
     @Override

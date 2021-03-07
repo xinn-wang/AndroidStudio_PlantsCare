@@ -21,6 +21,7 @@ import java.time.LocalDate;
 /**
  * Created by Kinh Truong
  * @author  Kinh Truong
+ * This activity is for displaying 2 options of adding plant as 2 buttons
  * @version 1: Added button navigation function
  * @version 2: Added listview for database, listview can be clicked to add plant to user's list
  * @version 3: Moved database listview to another activity, created 2 new buttons for new navigation
