@@ -42,6 +42,7 @@ public class AddPlantFromDatabase extends AppCompatActivity {
                 LocalDate creationDay = LocalDate.now();
                 MyPlantList.getInstance().getMyPlants().get(MyPlantList.getInstance().getMyPlants().size() - 1).setFirstDay(creationDay);
                 Toast.makeText(AddPlantFromDatabase.this, "Added to My Plants", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
