@@ -26,6 +26,7 @@ import java.util.ArrayList;
  * @version 1: Added buttons for navigation
  * @version 2: Setting loop and testing reminder function using Log.d
  * @version 3: Added get intent to retrieve and filter data, added listview for displaying reminder
+ * @version 4: Added additional condition in while loop to send recorded watered days of the past to history activity
  */
 public class ReminderActivity extends AppCompatActivity {
     private ArrayList<String> reminderList;
@@ -63,13 +64,19 @@ public class ReminderActivity extends AppCompatActivity {
         temperature.setText(Integer.toString(MyPlantList.getInstance().getMyPlants().get(position).getTemperature()));
         type.setText(MyPlantList.getInstance().getMyPlants().get(position).getType());
         while (true) {
+            //get the value of the first day that specific plant is added to user's plant list
             LocalDate creationDay = MyPlantList.getInstance().getMyPlants().get(position).getFirstDay();
+            //get the watering cycle(days/time) of the plant
             int interval = MyPlantList.getInstance().getMyPlants().get(position).getWateringCycle();
             LocalDate nextCycle = creationDay.plusDays((i++) * interval);
 
             if (nextCycle.compareTo(today) >= 0 && nextCycle.compareTo(today) <= 6) {
                 reminderList.add(MyPlantList.getInstance().getMyPlants().get(position).toString()
-                        + ": " + nextCycle);
+                        + "(wateringDay): " + nextCycle);
+            } else if (nextCycle.compareTo(today) >= -6 && nextCycle.compareTo(today) < 0) {
+                HistoryList.getInstance().getHistoryList().add(
+                        MyPlantList.getInstance().getMyPlants().get(position).toString()
+                                + "(wateringDay): " + nextCycle);
             } else if (nextCycle.compareTo(today) > 6) {
                 break;
             }

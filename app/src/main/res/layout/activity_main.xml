@@ -55,16 +55,6 @@
             android:text="@string/btn_mp" />
 
         <Button
-            android:id="@+id/btn_r"
-            style="@android:style/Widget.Button"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/border_05dp"
-            android:onClick="reminderBtn"
-            android:text="@string/btn_r" />
-
-        <Button
             android:id="@+id/btn_h"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"

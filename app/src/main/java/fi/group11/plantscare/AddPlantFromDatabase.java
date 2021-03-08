@@ -2,10 +2,13 @@ package fi.group11.plantscare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +23,7 @@ import java.time.LocalDate;
  */
 public class AddPlantFromDatabase extends AppCompatActivity {
     private ListView plantList;
+    private ImageButton backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,15 @@ public class AddPlantFromDatabase extends AppCompatActivity {
 
         //initiate
         plantList = findViewById(R.id.plantList);
+        backBtn = findViewById(R.id.backBtn);
+        //back to add plant activity
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addPlant = new Intent(AddPlantFromDatabase.this, AddPlantActivity.class);
+                startActivity(addPlant);
+            }
+        });
         //Set array adapter for plantList ListView
         plantList.setAdapter(new ArrayAdapter<Plant>(
                 this,

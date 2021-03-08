@@ -1,14 +1,12 @@
 <resources>
     <string name="app_name">PlantsCare_Group11</string>
     <string name="btn_mp">My Plants</string>
-    <string name="btn_r">Reminders</string>
     <string name="btn_h">History</string>
-    <string name="btn_r1">Reminders</string>
     <string name="btn_h1">History</string>
     <string name="mp">My_plants</string>
     <string name="clear">Clear list</string>
     <string name="r">Reminders</string>
-    <string name="h">History</string>
+    <string name="addFromDataBase">Add From Menu</string>
     <string name="p">plants name</string>
     <string name="anp">Add new plant</string>
     <string name="addPic">Add a pic</string>
