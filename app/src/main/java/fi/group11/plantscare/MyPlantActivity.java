@@ -3,6 +3,7 @@ package fi.group11.plantscare;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,9 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.time.LocalDate;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.util.ArrayList;
 
 /**
@@ -22,46 +24,59 @@ import java.util.ArrayList;
  * This activity is for storing user's myPlant's list
  * @version 1: Added navigation function for buttons
  * @version 2: Added ListView to display user's myPlant's list
+ * @version 3: Added sharedpreferences for saving and loading data
  *
  */
 public class MyPlantActivity extends AppCompatActivity {
-    private Button reminderBtn;
+    private Button clearBtn;
     private ImageButton addPlantBtn, backBtn;
     private ListView myPlants;
-    public static final String EXTRA_POSTIION = "fi.group11.plantscare.EXTRA_DAYS";
+    public static final String EXTRA_POSITION = "fi.group11.plantscare.EXTRA_POSITION";
+    private static final String SHARED_PRE = "sharedPreferences";
+    private static final String MY_PLANT_LIST = "myPlantList";
+    private ArrayList<Plant> userPlantList;
+    private ArrayAdapter<Plant> myPlantAdapter;
 
+
+    //How can I save data in addPlant database and manually
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myplants);
+        loadData();
+
         //initiate
         myPlants = findViewById(R.id.myPlantsList);
-        reminderBtn = findViewById(R.id.reminderBtn);
+        clearBtn = findViewById(R.id.clearBtn );
         addPlantBtn = findViewById(R.id.addPlantBtn);
         backBtn = findViewById(R.id.backBtn);
 
         //Set array adapter for myPlantList ListView
-        myPlants.setAdapter(new ArrayAdapter<Plant>(
+         myPlantAdapter= new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
                 MyPlantList.getInstance().getMyPlants()
-        ));
+        );
+        myPlants.setAdapter(myPlantAdapter);
+        //myPlantAdapter.notifyDataSetChanged();
+
         myPlants.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent reminderData = new Intent(MyPlantActivity.this, ReminderActivity.class);
-                reminderData.putExtra(EXTRA_POSTIION, Integer.toString(position));
+                reminderData.putExtra(EXTRA_POSITION, Integer.toString(position));
                 startActivity(reminderData);
             }
         });
 
         //Launch reminder activity onClick
-        reminderBtn.setOnClickListener(new View.OnClickListener() {
+        clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MyPlantList.getInstance().getMyPlants().clear();
+                myPlantAdapter.notifyDataSetChanged();
             }
         });
         //Launch add plant activity onClick
@@ -82,5 +97,37 @@ public class MyPlantActivity extends AppCompatActivity {
         });
 
     }
+
+    public void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PRE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(MyPlantList.getInstance().getMyPlants());
+        editor.putString(MY_PLANT_LIST, json);
+        editor.apply();
+    }
+
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PRE, MODE_PRIVATE);
+        Gson gson = new Gson();
+        TypeToken type = new TypeToken<ArrayList<Plant>>() {};
+        String json = sharedPreferences.getString(MY_PLANT_LIST, null);
+        userPlantList = gson.fromJson(json, type.getType());
+
+        if (userPlantList == null || userPlantList.isEmpty()) {
+            userPlantList = MyPlantList.getInstance().getMyPlants();
+        }
+        for(int i = 0; i < userPlantList.size(); i++) {
+            Log.d("loadData", userPlantList.get(i).toString());
+        }
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        saveData();
+    }
+
 }
 

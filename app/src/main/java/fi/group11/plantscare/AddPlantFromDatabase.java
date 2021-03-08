@@ -27,7 +27,6 @@ public class AddPlantFromDatabase extends AppCompatActivity {
 
         //initiate
         plantList = findViewById(R.id.plantList);
-
         //Set array adapter for plantList ListView
         plantList.setAdapter(new ArrayAdapter<Plant>(
                 this,
@@ -39,12 +38,12 @@ public class AddPlantFromDatabase extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                MyPlantList.getInstance().getMyPlants().add(PlantList.getInstance().getPlants()
-                        .get(position));
+                MyPlantList.getInstance().getMyPlants().add(PlantList.getInstance().getPlants().get(position));
                 LocalDate creationDay = LocalDate.now();
                 MyPlantList.getInstance().getMyPlants().get(MyPlantList.getInstance().getMyPlants().size() - 1).setFirstDay(creationDay);
-                Toast.makeText(AddPlantFromDatabase.this, "Added to My Plants" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddPlantFromDatabase.this, "Added to My Plants", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 }

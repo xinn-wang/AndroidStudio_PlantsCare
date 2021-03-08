@@ -54,7 +54,7 @@ public class ReminderActivity extends AppCompatActivity {
         ));
         //Retrieve intent from MyPlantActivity
         Intent reminderData = getIntent();
-        int position = Integer.valueOf(reminderData.getStringExtra(MyPlantActivity.EXTRA_POSTIION));
+        int position = Integer.valueOf(reminderData.getStringExtra(MyPlantActivity.EXTRA_POSITION));
         //Set applicable reminders
         LocalDate today = LocalDate.now();
         int i = 0;
