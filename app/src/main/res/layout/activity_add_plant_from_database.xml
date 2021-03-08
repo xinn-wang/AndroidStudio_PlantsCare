@@ -8,7 +8,7 @@
     android:background="@color/grey_background">
 
     <TextView
-        android:id="@+id/h"
+        android:id="@+id/h2"
         android:layout_width="233dp"
         android:layout_height="31dp"
         android:layout_marginStart="34dp"

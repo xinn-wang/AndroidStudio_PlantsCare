@@ -2,10 +2,12 @@ package fi.group11.plantscare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.time.LocalDate;
@@ -21,6 +23,7 @@ import java.time.LocalDate;
 public class AddPlantFromUser extends AppCompatActivity {
     private Button addManual;
     private EditText name, type, waterCycle, sunPref, temperature;
+    private ImageButton backBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class AddPlantFromUser extends AppCompatActivity {
         sunPref = findViewById(R.id.sunPrefEtxt);
         temperature = findViewById(R.id.temperatureEtxt);
         addManual = findViewById(R.id.addManual);
+        backBtn = findViewById(R.id.backBtn);
         //set hint
         name.setHint(R.string.name);
         type.setHint(R.string.type);
@@ -40,6 +44,15 @@ public class AddPlantFromUser extends AppCompatActivity {
         sunPref.setHint(R.string.sunPref);
         temperature.setHint(R.string.temperature);
         addManual.setText(R.string.anp);
+
+        //back to add plant activity
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addPlant = new Intent(AddPlantFromUser.this, AddPlantActivity.class);
+                startActivity(addPlant);
+            }
+        });
         //test manual add button
         addManual.setOnClickListener(new View.OnClickListener() {
             @Override

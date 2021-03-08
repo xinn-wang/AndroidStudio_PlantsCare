@@ -20,6 +20,8 @@
     <string name="temperature">Ideal temperature</string>
     <string name="btn_Database">Add from database</string>
     <string name="btn_addManually">Add manually</string>
+    <string name="addFromUser">Add From you</string>
+
 
 
 </resources>
