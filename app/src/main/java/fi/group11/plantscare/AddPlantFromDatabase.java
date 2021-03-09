@@ -3,7 +3,9 @@ package fi.group11.plantscare;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,14 +14,17 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import java.time.LocalDate;
 
 /**
  * Created by Kinh Truong
  * @author Kinh Truong
  * This activity is for displaying the plant database of the app
- * @version 1: Added listview to display database
+ * @version 1: Added ListView to display database
  * @version 2: Added Toast message on added plant
+ * @version 3: Added saveData() method for saving data in this activity, modified onClickListener
  */
 public class AddPlantFromDatabase extends AppCompatActivity {
     private ListView plantList;
@@ -50,14 +55,24 @@ public class AddPlantFromDatabase extends AppCompatActivity {
         plantList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                MyPlantList.getInstance().getMyPlants().add(PlantList.getInstance().getPlants().get(position));
                 LocalDate creationDay = LocalDate.now();
-                MyPlantList.getInstance().getMyPlants().get(MyPlantList.getInstance().getMyPlants().size() - 1).setFirstDay(creationDay);
+                Plant p = PlantList.getInstance().getPlants().get(position);
+                p.setFirstDay(creationDay.minusDays(8).toString());
+                saveData(p);
                 Toast.makeText(AddPlantFromDatabase.this, "Added to My Plants", Toast.LENGTH_SHORT).show();
 
             }
         });
+    }
+    public void saveData(Plant p) {
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPlantActivity.SHARED_PRE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        MyPlantList.getInstance().addPlant(p);
+        String json = gson.toJson(MyPlantList.getInstance().getMyPlants());
+        editor.putString(MyPlantActivity.MY_PLANT_LIST, json);
+        Log.d("saveData", "sharepreferences " + p);
+        editor.apply();
     }
 
 }

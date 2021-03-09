@@ -9,11 +9,11 @@ import java.time.LocalTime;
  * This activity is for setting up database and for data manipulation throughout the app
  * @version 1: Created instance variables, constructor, getters, setters and toString methods
  * @version 2: Added LocalDate type instance variable firstDay and its setter, getter
+ * @version 3: Change variable type of firstDay to String for sharePreferences manipulation
  */
 public class Plant {
-    private String name , type , sunPref;
+    private String name , type , sunPref, firstDay;
     private int wateringCycle, temperature;
-    private LocalDate firstDay;
 
     /**
      * Create a Plant type object with name, type, watering cycle, sun preference and temperature
@@ -75,7 +75,7 @@ public class Plant {
      * Get plant's first added day to myPlantList
      * @return first added dayo f the plant
      */
-    public LocalDate getFirstDay() {
+    public String getFirstDay() {
         return this.firstDay;
     }
 
@@ -83,7 +83,7 @@ public class Plant {
      * Set plant's first added day
      * @param firstDay LocalDate plant's first added day
      */
-    public void setFirstDay(LocalDate firstDay) {
+    public void setFirstDay(String firstDay) {
         this.firstDay = firstDay;
     }
 
