@@ -14,7 +14,7 @@ import android.widget.ListView;
  * @author  Kinh Truong
  * This activity is for displaying output of already watered date of plants
  * @version 1: Added navigation button
- * @version 2: Added listview and set adapter to display history of watered plants
+ * @version 2: Added ListView and set adapter to display history of watered plants
  */
 public class HistoryActivity extends AppCompatActivity {
     private ImageButton backBtn;
@@ -38,6 +38,7 @@ public class HistoryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent back = new Intent(HistoryActivity.this, MainActivity.class);
                 startActivity(back);
+                HistoryList.getInstance().getHistoryList().clear();
             }
         });
 

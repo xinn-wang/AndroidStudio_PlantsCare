@@ -23,8 +23,8 @@ import java.time.LocalDate;
  * @author  Kinh Truong
  * This activity is for displaying 2 options of adding plant as 2 buttons
  * @version 1: Added button navigation function
- * @version 2: Added listview for database, listview can be clicked to add plant to user's list
- * @version 3: Moved database listview to another activity, created 2 new buttons for new navigation
+ * @version 2: Added listview for database, ListView can be clicked to add plant to user's list
+ * @version 3: Moved database ListView to another activity, created 2 new buttons for new navigation
  */
 public class AddPlantActivity extends AppCompatActivity {
     private ImageButton backBtn;

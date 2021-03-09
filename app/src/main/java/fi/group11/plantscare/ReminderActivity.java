@@ -25,8 +25,9 @@ import java.util.ArrayList;
  * This activity is for displaying plant info and reminders for each specific plant in user'list
  * @version 1: Added buttons for navigation
  * @version 2: Setting loop and testing reminder function using Log.d
- * @version 3: Added get intent to retrieve and filter data, added listview for displaying reminder
+ * @version 3: Added get intent to retrieve and filter data, added ListView for displaying reminder
  * @version 4: Added additional condition in while loop to send recorded watered days of the past to history activity
+ * @version 5: Modified while loop to successfully retrieve firstDay data
  */
 public class ReminderActivity extends AppCompatActivity {
     private ArrayList<String> reminderList;
@@ -65,18 +66,21 @@ public class ReminderActivity extends AppCompatActivity {
         type.setText(MyPlantList.getInstance().getMyPlants().get(position).getType());
         while (true) {
             //get the value of the first day that specific plant is added to user's plant list
-            LocalDate creationDay = MyPlantList.getInstance().getMyPlants().get(position).getFirstDay();
+            //firstDay is modified to String type and convert again to LocalDate
+            // because sharePreferences is not able to save LocalDate type data
+            LocalDate creationDay = LocalDate.parse(MyPlantList.getInstance().getMyPlants().get(position).getFirstDay());
+            Log.d("firstDay","" + MyPlantList.getInstance().getMyPlants().get(position).getFirstDay());
             //get the watering cycle(days/time) of the plant
             int interval = MyPlantList.getInstance().getMyPlants().get(position).getWateringCycle();
             LocalDate nextCycle = creationDay.plusDays((i++) * interval);
 
             if (nextCycle.compareTo(today) >= 0 && nextCycle.compareTo(today) <= 6) {
                 reminderList.add(MyPlantList.getInstance().getMyPlants().get(position).toString()
-                        + "(wateringDay): " + nextCycle);
+                        + "(watering days): " + nextCycle);
             } else if (nextCycle.compareTo(today) >= -6 && nextCycle.compareTo(today) < 0) {
                 HistoryList.getInstance().getHistoryList().add(
                         MyPlantList.getInstance().getMyPlants().get(position).toString()
-                                + "(wateringDay): " + nextCycle);
+                                + "(past watering days): " + nextCycle);
             } else if (nextCycle.compareTo(today) > 6) {
                 break;
             }

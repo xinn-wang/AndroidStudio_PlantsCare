@@ -44,11 +44,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-    public void reminderBtn(View v) {
-        Intent reminder = new Intent(this, ReminderActivity.class);
-        startActivity(reminder);
-    }
 }
 

@@ -24,7 +24,8 @@ import java.util.ArrayList;
  * This activity is for storing user's myPlant's list
  * @version 1: Added navigation function for buttons
  * @version 2: Added ListView to display user's myPlant's list
- * @version 3: Added sharedpreferences for saving and loading data
+ * @version 3: Added sharedPreferences for saving and loading data
+ * @version 4: Modified loadData() method
  *
  */
 public class MyPlantActivity extends AppCompatActivity {
@@ -32,9 +33,9 @@ public class MyPlantActivity extends AppCompatActivity {
     private ImageButton addPlantBtn, backBtn;
     private ListView myPlants;
     public static final String EXTRA_POSITION = "fi.group11.plantscare.EXTRA_POSITION";
-    private static final String SHARED_PRE = "sharedPreferences";
-    private static final String MY_PLANT_LIST = "myPlantList";
-    private ArrayList<Plant> userPlantList;
+    protected static final String SHARED_PRE = "sharedPreferences";
+    protected static final String MY_PLANT_LIST = "myPlantList";
+    //private ArrayList<Plant> userPlantList;
     private ArrayAdapter<Plant> myPlantAdapter;
 
 
@@ -112,15 +113,12 @@ public class MyPlantActivity extends AppCompatActivity {
         Gson gson = new Gson();
         TypeToken type = new TypeToken<ArrayList<Plant>>() {};
         String json = sharedPreferences.getString(MY_PLANT_LIST, null);
-        userPlantList = gson.fromJson(json, type.getType());
+        Log.d("saveData", json);
+        ArrayList<Plant> userPlantList = gson.fromJson(json, type.getType());
 
-        if (userPlantList == null || userPlantList.isEmpty()) {
-            userPlantList = MyPlantList.getInstance().getMyPlants();
+        if(userPlantList != null || !userPlantList.isEmpty()) {
+            MyPlantList.getInstance().addAllPlant(userPlantList);
         }
-        for(int i = 0; i < userPlantList.size(); i++) {
-            Log.d("loadData", userPlantList.get(i).toString());
-        }
-
     }
 
     @Override
