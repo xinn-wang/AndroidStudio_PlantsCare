@@ -40,7 +40,7 @@ public class AddPlantActivity extends AppCompatActivity {
         addFromDatabase = findViewById(R.id.addFromDatabase);
         addManually = findViewById(R.id.addManually);
 
-        //lauch/back to my plant activity
+        //lauch/back to MyPlant activity
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +48,7 @@ public class AddPlantActivity extends AppCompatActivity {
                 startActivity(myplant);
             }
         });
-
+        //launch AddFromDatabase activity
         addFromDatabase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class AddPlantActivity extends AppCompatActivity {
                 startActivity(addPlantFromDatabase);
             }
         });
-
+        //launch AddFromUser activity
         addManually.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,10 +65,5 @@ public class AddPlantActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-        //Add new plant button will add that particular plant either from database or manually
-        // Added into the singleton list in myplant
     }
 }

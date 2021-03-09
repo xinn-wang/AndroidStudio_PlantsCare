@@ -51,19 +51,23 @@ public class AddPlantFromDatabase extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 PlantList.getInstance().getPlants()
         ));
-
+        // Add plant to user's plant list from app's menu onClick
         plantList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 LocalDate creationDay = LocalDate.now();
                 Plant p = PlantList.getInstance().getPlants().get(position);
-                p.setFirstDay(creationDay.minusDays(8).toString());
+                //creationDay is converted to String because sharePreferences cannot save LocalDate type data
+                p.setFirstDay(creationDay.toString());
                 saveData(p);
                 Toast.makeText(AddPlantFromDatabase.this, "Added to My Plants", Toast.LENGTH_SHORT).show();
 
             }
         });
     }
+    /**
+     * Save data using sharePreferences
+     */
     public void saveData(Plant p) {
         SharedPreferences sharedPreferences = getSharedPreferences(MyPlantActivity.SHARED_PRE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         //initiate
         myPlantBtn = findViewById(R.id.btn_mp);
         historyBtn = findViewById(R.id.btn_h);
-
+        //launch MyPlant activity
         myPlantBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myplant);
             }
         });
-
+        //launch History activity
         historyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -26,19 +26,18 @@ public class HistoryActivity extends AppCompatActivity {
         // initiate
         backBtn = findViewById(R.id.backBtn);
         history = findViewById(R.id.recordsListView);
-
+        //set adapter
         history.setAdapter(new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
                 HistoryList.getInstance().getHistoryList()
         ));
-
+        // back to Main activity
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent back = new Intent(HistoryActivity.this, MainActivity.class);
                 startActivity(back);
-                HistoryList.getInstance().getHistoryList().clear();
             }
         });
 

@@ -58,7 +58,7 @@ public class AddPlantFromUser extends AppCompatActivity {
                 startActivity(addPlant);
             }
         });
-        //test manual add button
+        //add plants manually to user's plant list onclick
         addManual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,20 +72,17 @@ public class AddPlantFromUser extends AppCompatActivity {
                             Integer.valueOf(waterCycle.getText().toString()),
                             sunPref.getText().toString(),
                             Integer.valueOf(temperature.getText().toString()));
-                    p.setFirstDay(creationDay.minusDays(8).toString());
+                    //creationDay is converted to String because sharePreferences cannot save LocalDate type data
+                    p.setFirstDay(creationDay.toString());
                     saveData(p);
-
-                    /*MyPlantList.getInstance().getMyPlants().add
-                            (new Plant(name.getText().toString(), type.getText().toString(),
-                                    Integer.valueOf(waterCycle.getText().toString()),
-                                    sunPref.getText().toString(),
-                                    Integer.valueOf(temperature.getText().toString())));*/
-                    //MyPlantList.getInstance().getMyPlants().get(MyPlantList.getInstance().getMyPlants().size() - 1).setFirstDay(creationDay.minusDays(8).toString());
                     Toast.makeText(AddPlantFromUser.this, "Added to My Plants" , Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
+    /**
+     * Save data using sharePreferences
+     */
     public void saveData(Plant p) {
         SharedPreferences sharedPreferences = getSharedPreferences(MyPlantActivity.SHARED_PRE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

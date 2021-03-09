@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * This activity is for storing user's myPlant's list
  * @version 1: Added navigation function for buttons
  * @version 2: Added ListView to display user's myPlant's list
- * @version 3: Added sharedPreferences for saving and loading data
+ * @version 3: Added sharedPreferences and clearBtn to clear user's plant list
  * @version 4: Modified loadData() method
  *
  */
@@ -72,7 +72,7 @@ public class MyPlantActivity extends AppCompatActivity {
             }
         });
 
-        //Launch reminder activity onClick
+        //clear user's plant list
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +99,9 @@ public class MyPlantActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Save data using sharePreferences
+     */
     public void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PRE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -107,7 +110,9 @@ public class MyPlantActivity extends AppCompatActivity {
         editor.putString(MY_PLANT_LIST, json);
         editor.apply();
     }
-
+    /**
+     * Load data using sharePreferences
+     */
     public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PRE, MODE_PRIVATE);
         Gson gson = new Gson();
@@ -121,6 +126,9 @@ public class MyPlantActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Call saveData method
+     */
     @Override
     protected void onPause() {
         super.onPause();
